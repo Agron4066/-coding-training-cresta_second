@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* You can add global styles, and also import other style files here */
+/*ブレイクポイント*/
+/*---ソリッドレイアウト用---*/
+/*--PCとSPだけの場合--*/
+/*position上右下左*/
+/*margin上右下左*/
+/*padding上右下左*/
+/*margin、padding 上下*/
+/*width*/
+/*height*/
+/*---ブレイクポイントを含まないもの---*/
+/*-margin、padding-*/
+/*-中央寄せ-*/
+/*block要素*/
+/*display: flex;*/
+/*-幅いっぱい-*/
+/*色を塗って幅いっぱい*/
+/*縦横比を保って幅いっぱい*/
+/*色の変数*/
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+header, section, footer {
+  margin: 0;
+  width: 100%;
+}
+
+/*ブレイクポイント別のhタグの設定--個々の値は案件によって変える*/
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 70px;
+    font-style: italic;
+  }
+
+  h2 {
+    font-size: 60px;
+    font-style: italic;
+  }
+}
+@media screen and (max-width: 1199px) {
+  h1 {
+    font-size: 37px;
+    font-style: italic;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-style: italic;
+  }
+}
+/*---------- You can add styles of each sections here ----------*/
+
+/*# sourceMappingURL=style.css.map */
