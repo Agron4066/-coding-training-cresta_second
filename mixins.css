@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*ブレイクポイント*/
+/*---ソリッドレイアウト用---*/
+/*--PCとSPだけの場合--*/
+/*position上右下左*/
+/*margin上右下左*/
+/*padding上右下左*/
+/*margin、padding 上下*/
+/*width*/
+/*height*/
+/*---ブレイクポイントを含まないもの---*/
+/*-margin、padding-*/
+/*-中央寄せ-*/
+/*block要素*/
+/*display: flex;*/
+/*-幅いっぱい-*/
+/*色を塗って幅いっぱい*/
+/*縦横比を保って幅いっぱい*/
+/*色の変数*/
+
+/*# sourceMappingURL=mixins.css.map */
