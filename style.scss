@@ -1,0 +1,42 @@
+/* You can add global styles, and also import other style files here */
+@import "mixins";
+
+body{
+  @include no-margin-padding;
+  width: 100%;
+}
+
+header, section, footer{
+  margin: 0;
+  width: 100%;
+}
+
+/*ブレイクポイント別のhタグの設定--個々の値は案件によって変える*/
+@media screen and (min-width: $pc-min){
+  h1{
+    font-size: 70px;
+    font-style: italic;
+  }
+  h2{
+    font-size: 60px;
+    font-style: italic;
+  }
+}
+@media screen and (max-width: $sp-max){
+  h1{
+    font-size: 37px;
+    font-style: italic;
+  }
+  h2{
+    font-size: 30px;
+    font-style: italic;
+  }
+}
+
+/*---------- You can add styles of each sections here ----------*/
+header{}
+#concept{}
+#works{}
+#service{}
+#contact{}
+#footer{}
