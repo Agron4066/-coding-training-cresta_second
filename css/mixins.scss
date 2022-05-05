@@ -84,6 +84,15 @@ $sp-max: 1199px;
   @media screen and (max-width: $sp-max){height: $sp-height;}
 }
 
+/*PC、SPでの表示・非表示*/
+@mixin display-only-on-PC {
+  @media screen and (max-width: $sp-max){display: none;}
+}
+@mixin rdisplay-only-on-SP {
+  @media screen and (min-width: $pc-min){display: none;}
+
+}
+
 /*---ブレイクポイントを含まないもの---*/
 /*-margin、padding-*/
 @mixin margin-top-bottom($mtb) {
