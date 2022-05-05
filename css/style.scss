@@ -11,11 +11,15 @@ header, section, footer{
   width: 100%;
 }
 
-/*ブレイクポイント別のhタグの設定--個々の値は案件によって変える*/
+/*hタグの設定--個々の値は案件によって変える*/
+h1, h2{
+  font-family: "Noto Serif";
+  font-weight: bold;
+}
 @media screen and (min-width: $pc-min){
   h1{
     font-size: 70px;
-    font-style: italic;
+    color: white;
   }
   h2{
     font-size: 60px;
@@ -25,7 +29,7 @@ header, section, footer{
 @media screen and (max-width: $sp-max){
   h1{
     font-size: 37px;
-    font-style: italic;
+    color: white;
   }
   h2{
     font-size: 30px;
@@ -34,7 +38,16 @@ header, section, footer{
 }
 
 /*---------- You can add styles of each sections here ----------*/
-header{}
+header{
+  position: relative;
+  width: 100%;
+  img{
+    @include fluid-keeping-ratio(752, 1440);
+  }
+  h1{
+    position: absolute;
+  }
+}
 #concept{}
 #works{}
 #service{}
