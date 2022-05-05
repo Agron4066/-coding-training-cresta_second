@@ -1,0 +1,130 @@
+/*ブレイクポイント*/
+$pc-min: 1200px;
+$sp-max: 1199px;
+
+/*---ソリッドレイアウト用---*/
+/*--PCとSPだけの場合--*/
+/*position上右下左*/
+@mixin resp-ps-top($pc-t: 0px, $sp-t: 0px) {
+  @media screen and (min-width: $pc-min){top: $pc-t;}
+  @media screen and (max-width: $sp-max){top: $sp-t;}
+}
+@mixin resp-ps-right($pc-r: 0px, $sp-r: 0px) {
+  @media screen and (min-width: $pc-min){right: $pc-r;}
+  @media screen and (max-width: $sp-max){right: $sp-r;}
+}
+@mixin resp-ps-bottom($pc-b: 0px, $sp-b: 0px) {
+  @media screen and (min-width: $pc-min){bottom: $pc-b;}
+  @media screen and (max-width: $sp-max){bottom: $sp-b;}
+}
+@mixin resp-ps-left($pc-l: 0px, $sp-l: 0px) {
+  @media screen and (min-width: $pc-min){left: $pc-l;}
+  @media screen and (max-width: $sp-max){left: $sp-l;}
+}
+
+/*margin上右下左*/
+@mixin resp-ps-margin-top($pc-mt: 0px, $sp-mt: 0px) {
+  @media screen and (min-width: $pc-min){margin-top: $pc-mt;}
+  @media screen and (max-width: $sp-max){margin-top: $sp-mt;}
+}
+@mixin resp-ps-margin-right($pc-mr: 0px, $sp-mr: 0px) {
+  @media screen and (min-width: $pc-min){margin-right: $pc-mr;}
+  @media screen and (max-width: $sp-max){margin-right: $sp-mr;}
+}
+@mixin resp-ps-margin-bottom($pc-mb: 0px, $sp-mb: 0px) {
+  @media screen and (min-width: $pc-min){margin-bottom: $pc-mb;}
+  @media screen and (max-width: $sp-max){margin-bottom: $sp-mb;}
+}
+@mixin resp-ps-margin-left($pc-ml: 0px, $sp-ml: 0px) {
+  @media screen and (min-width: $pc-min){margin-left: $pc-ml;}
+  @media screen and (max-width: $sp-max){margin-left: $sp-ml;}
+}
+
+/*padding上右下左*/
+@mixin resp-ps-padding-top($pc-pt: 0px, $sp-pt: 0px) {
+  @media screen and (min-width: $pc-min){padding-top: $pc-pt;}
+  @media screen and (max-width: $sp-max){padding-top: $sp-pt;}
+}
+@mixin resp-ps-padding-right($pc-pr: 0px, $sp-pr: 0px) {
+  @media screen and (min-width: $pc-min){padding-right: $pc-pr;}
+  @media screen and (max-width: $sp-max){margin-right: $sp-pr;}
+}
+@mixin resp-ps-padding-bottom($pc-pb: 0px, $sp-pb: 0px) {
+  @media screen and (min-width: $pc-min){padding-bottom: $pc-pb;}
+  @media screen and (max-width: $sp-max){padding-bottom: $sp-pb;}
+}
+@mixin resp-ps-padding-left($pc-pl: 0px, $sp-pl: 0px) {
+  @media screen and (min-width: $pc-min){padding-left: $pc-pl;}
+  @media screen and (max-width: $sp-max){padding-left: $sp-pl;}
+}
+
+/*margin、padding 上下*/
+@mixin resp-ps-margin-top-bottom($pc-mtb: 0px, $sp-mtb: 0px) {
+  @media screen and (min-width: $pc-min){margin-top: $pc-mtb; margin-bottom: $pc-mtb;}
+  @media screen and (max-width: $sp-max){margin-top: $sp-mtb; margin-bottom: $sp-mtb;}
+}
+@mixin resp-ps-padding-top-bottom($pc-mtb: 0px, $sp-mtb: 0px) {
+  @media screen and (min-width: $pc-min){padding-top: $pc-mtb; padding-bottom: $pc-mtb;}
+  @media screen and (max-width: $sp-max){padding-top: $sp-mtb; padding-bottom: $sp-mtb;}
+}
+
+/*width*/
+@mixin resp-ps-max-width($pc-max-width: 1000px, $sp-max-width: 275px) {
+  @media screen and (min-width: $pc-min){max-width: $pc-max-width;}
+  @media screen and (max-width: $sp-max){max-width: $sp-max-width;}
+}
+@mixin resp-ps-width($pc-width: 1000px, $sp-width: 275px) {
+  @media screen and (min-width: $pc-min){width: $pc-width;}
+  @media screen and (max-width: $sp-max){width: $sp-width;}
+}
+
+/*height*/
+@mixin resp-ps-height($pc-height: 412px, $sp-height: 130px) {
+  @media screen and (min-width: $pc-min){height: $pc-height;}
+  @media screen and (max-width: $sp-max){height: $sp-height;}
+}
+
+/*---ブレイクポイントを含まないもの---*/
+/*-margin、padding-*/
+@mixin margin-top-bottom($mtb) {
+  margin-top: $mtb;
+  margin-bottom: $mtb;
+}
+@mixin padding-top-bottom($ptb) {
+  padding-top: $ptb;
+  padding-bottom: $ptb;
+}
+@mixin no-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+/*-中央寄せ-*/
+/*block要素*/
+@mixin block-element-horizontal-center{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*display: flex;*/
+@mixin flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*-幅いっぱい-*/
+/*色を塗って幅いっぱい*/
+@mixin fluid($bg-color) {
+  width: 100%;
+  background-color: $bg-color;
+}
+
+/*縦横比を保って幅いっぱい*/
+@mixin fluid-keeping-ratio($original-height: 0, $original-width: 0) {
+  width: 100%;
+  height: calc(#{$original-height} / #{$original-width} *100vw);
+}
+
+/*色の変数*/
+$white: #ffffff;
