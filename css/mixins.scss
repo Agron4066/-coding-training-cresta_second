@@ -84,13 +84,30 @@ $sp-max: 1199px;
   @media screen and (max-width: $sp-max){height: $sp-height;}
 }
 
+/*font-size*/
+@mixin resp-ps-font-size($pc-fsize: 40px, $sp-fsize: 20px) {
+  @media screen and (min-width: $pc-min){font-size: $pc-fsize;}
+  @media screen and (max-width: $sp-max){font-size: $sp-fsize;}
+}
+
+/*line-height*/
+@mixin resp-ps-line-height($pc-lheight: 1.0, $sp-lheight: 1.0) {
+  @media screen and (min-width: $pc-min){line-height: $pc-lheight;}
+  @media screen and (max-width: $sp-max){line-height: $sp-lheight;}
+}
+
+/*letter-spacing*/
+@mixin resp-ps-letter-spacing($pc-lspacing: 0.01em, $sp-lspacing: 0.01em) {
+  @media screen and (min-width: $pc-min){letter-spacing: $pc-lspacing;}
+  @media screen and (max-width: $sp-max){letter-spacing: $sp-lspacing;}
+}
+
 /*PC、SPでの表示・非表示*/
 @mixin display-only-on-PC {
   @media screen and (max-width: $sp-max){display: none;}
 }
-@mixin rdisplay-only-on-SP {
+@mixin display-only-on-SP {
   @media screen and (min-width: $pc-min){display: none;}
-
 }
 
 /*---ブレイクポイントを含まないもの---*/
