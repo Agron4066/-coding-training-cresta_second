@@ -31,22 +31,38 @@
 
     <!-- css -->
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 
     <!-- js -->
 </head>
 <body>
     <header>
-        <div class="wrapper">
+        <nav class="nav">
+            <div id="pc-nav">
+                <p>Cresta Design</p>
+                <ul>
+                    <li><a href="#concept">Concept</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="slider">
+            <li><img src="../img/fv-bgi_01@2x.jpg"></li>
+            <li><img src="../img/fv-bgi_02@2x.jpg"></li>
+            <li><img src="../img/fv-bgi_03@2x.jpg"></li>
+        </ul>
+        <div class="spFv">
             <img src="../img/fv-bgi_01@2x.jpg">
         </div>
         <div class="fvTitle">
             <h1>Design for Smile.</h1>
-            <p>～快適なオフィスをデザインする～</p>
+            <p><span>～</span>快適なオフィスを<br class="br-sp">デザインする<span>～</span></p>
         </div>
     </header>
-    <nav class="nav">
 
-    </nav>
     <section id="concept">
 
     </section>
@@ -65,5 +81,8 @@
     <footer>
 
     </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="../js/slider.js"></script>
 </body>
 </html>
