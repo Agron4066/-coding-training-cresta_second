@@ -22,6 +22,16 @@ $sp-max: 1199px;
   @media screen and (max-width: $sp-max){left: $sp-l;}
 }
 
+/*gap*/
+@mixin resp-ps-column-gap($pc-cg: 0px,$sp-cg: 0px) {
+  @media screen and (min-width: $pc-min){column-gap: $pc-cg;}
+  @media screen and (max-width: $sp-max){column-gap: $sp-cg;}
+}
+@mixin resp-row-gap($pc-rg: 0px, $sp-rg: 0px) {
+  @media screen and (min-width: $pc-min){row-gap: $pc-rg;}
+  @media screen and (max-width: $sp-max){row-gap: $sp-rg;}
+}
+
 /*margin上右下左*/
 @mixin resp-ps-margin-top($pc-mt: 0px, $sp-mt: 0px) {
   @media screen and (min-width: $pc-min){margin-top: $pc-mt;}
@@ -154,3 +164,4 @@ $sp-max: 1199px;
 
 /*色の変数*/
 $base: #282F35;
+$text-primary: #171717;
