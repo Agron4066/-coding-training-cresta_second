@@ -22,8 +22,146 @@
 /*色を塗って幅いっぱい*/
 /*縦横比を保って幅いっぱい*/
 /*色の変数*/
+/*ブレイクポイント*/
+/*---ソリッドレイアウト用---*/
+/*--PCとSPだけの場合--*/
+/*position上右下左*/
+/*margin上右下左*/
+/*padding上右下左*/
+/*margin、padding 上下*/
+/*width*/
+/*height*/
+/*font-size*/
+/*line-height*/
+/*letter-spacing*/
+/*PC、SPでの表示・非表示*/
+/*---ブレイクポイントを含まないもの---*/
+/*-margin、padding-*/
+/*-中央寄せ-*/
+/*block要素*/
+/*display: flex;*/
+/*-幅いっぱい-*/
+/*色を塗って幅いっぱい*/
+/*縦横比を保って幅いっぱい*/
+/*色の変数*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,700;1,700&display=swap");
+/*https://coco-factory.jp/ugokuweb/move01/5-1-14/ を参考にした。*/
+/*========= ナビゲーションのためのCSS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,700;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap");
+@media screen and (min-width: 1200px) {
+  #sp-nav {
+    display: none;
+  }
+}
+#sp-nav .sp-navWrapper {
+  position: absolute;
+  z-index: 9999;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 345px;
+  height: 36px;
+}
+#sp-nav .sp-navWrapper .sp-navTitle {
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.38;
+  letter-spacing: 0.05em;
+  color: white;
+}
+#sp-nav .sp-navWrapper .sp-navTitle.panelactive {
+  display: none;
+}
+#sp-nav #hamburger-nav {
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position: fixed;
+  z-index: 996;
+  /*ナビのスタート位置と形状*/
+  top: 0;
+  right: -120%;
+  background-color: #282F35;
+  /*動き*/
+  transition: all 0.7s;
+}
+#sp-nav #hamburger-nav.panelactive {
+  /*.panelactiveクラスの前にスペースを入れない*/
+  /*アクティブクラスがついたら位置を0に*/
+  right: 0;
+  /*（アクティブ状態での）デザイン*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+#sp-nav #hamburger-nav.panelactive ul li {
+  margin-bottom: 30px;
+  list-style: none;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.375;
+  letter-spacing: 0.05em;
+  color: white;
+}
+#sp-nav #hamburger-nav.panelactive ul li:last-child {
+  margin-bottom: 0;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.hamburger-btn {
+  cursor: pointer;
+  width: 30px;
+  height: 23px;
+}
+.hamburger-btn span {
+  /*×に変化*/
+  display: inline-block;
+  transition: all 0.7s;
+  position: absolute;
+  right: 0px;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+}
+.hamburger-btn span:nth-of-type(1) {
+  top: 7px;
+}
+.hamburger-btn span:nth-of-type(2) {
+  top: 17px;
+}
+.hamburger-btn span:nth-of-type(3) {
+  top: 27px;
+}
+
+.hamburger-btn.active {
+  /*.activeクラスの前にスペースを入れない*/
+}
+.hamburger-btn.active span:nth-of-type(1) {
+  top: 7px;
+  right: 0px;
+  width: 30px;
+  transform: translateX(4.3917963225px) translateY(10.6082036775px) rotate(-45deg);
+}
+.hamburger-btn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.hamburger-btn.active span:nth-of-type(3) {
+  top: 7px;
+  right: 0px;
+  width: 30px;
+  transform: translateX(4.3917963225px) translateY(10.6082036775px) rotate(45deg);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -87,13 +225,18 @@ header {
   width: 100%;
 }
 header #pc-nav {
-  position: absolute;
-  z-index: 800;
+  position: fixed;
+  top: 19px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   width: 1200px;
   height: 36px;
   font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 700;
   color: white;
 }
 @media screen and (max-width: 1199px) {
@@ -101,11 +244,25 @@ header #pc-nav {
     display: none;
   }
 }
+header #pc-nav p {
+  line-height: 1.38;
+  letter-spacing: 0.05em;
+  font-size: 26px;
+}
+header #pc-nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
 header #pc-nav ul li {
-  display: inline;
+  list-style: none;
 }
 header #pc-nav ul li a {
   text-decoration: none;
+  line-height: 1.375;
+  letter-spacing: 0.05em;
+  font-size: 16px;
 }
 @media screen and (min-width: 1200px) {
   header ul .slider {
@@ -127,6 +284,7 @@ header #pc-nav ul li a {
   }
 }
 header .spFv {
+  z-index: 0;
   display: flex;
   justify-content: center;
   width: 100vw;
@@ -139,6 +297,7 @@ header .spFv {
   }
 }
 header .spFv img {
+  z-index: 0;
   height: 599px;
 }
 @media screen and (min-width: 1200px) {
@@ -150,6 +309,7 @@ header .fvTitle {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10;
   display: block;
 }
 @media screen and (min-width: 1200px) {
