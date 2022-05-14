@@ -14,7 +14,7 @@ header, section, footer{
   width: 100%;
 }
 
-/*hタグの設定--個々の値は案件によって変える*/
+/*hタグの設定*/
 h1{
   margin-top: 0;
   @include resp-ps-margin-bottom(24px, 53px);
@@ -24,10 +24,22 @@ h1{
   letter-spacing: 0.05em;
   @include resp-ps-font-size(70px, 37px);
   font-family: 'Noto Serif', serif;
-  font-weight: bold;
+  font-weight: 700;
   color: white;
   @media screen and (max-width: $sp-max){text-align: center;}
 }
+h2{
+  @include no-margin-padding;
+  @include resp-ps-height(82px, 41px);
+  @include resp-ps-font-size(60px, 30px);
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+  font-weight: 700;
+  color: $base;
+}
+
+.br-pc{@include display-only-on-PC;}
+.br-sp{@include display-only-on-SP;}
 
 /*---------- You can add styles of each sections here ----------*/
 header{
@@ -57,7 +69,7 @@ header{
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 30px;
+      column-gap: 30px;
       li{
         list-style: none;
         a{
@@ -129,7 +141,71 @@ header{
   }
 
 }
-#concept{}
+#concept{
+  .sectionWrapper{
+    margin-top: 100px;
+    @include block-element-horizontal-center;
+    @include resp-ps-margin-bottom(70px, 40px);
+    @include resp-ps-width(1200px, 345px);
+    .sectionTitle{
+      display: flex;
+      align-items: center;
+      @include resp-ps-column-gap(33px, 31px);
+      @include block-element-horizontal-center;
+      @include resp-ps-margin-bottom(70px, 51px);
+      min-width: 345px;
+      max-width: 1000px;
+      span{
+        @include resp-ps-width(200px, 90px);
+        height: 5px;
+        background-color: $base;
+      }
+    }
+    article{
+      @include block-element-horizontal-center;
+      @include resp-ps-width(1000px, 345px);
+      font-family: "Noto Serif JP", serif;
+      font-weight: 700;
+      color: $text-primary;
+      .title{
+        @include resp-ps-margin-bottom(60px, 31px);
+        width: 100%;
+        @include resp-ps-height(95px, 57px);
+        text-align: center;
+        @include resp-ps-font-size(30px, 20px);
+        @include resp-ps-line-height(1.67, 1.5);
+        letter-spacing: 0.05em;
+      }
+      .wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 30px;
+        align-items: center;
+        @include resp-ps-margin-bottom(70px, 40px);
+        .body{
+          @include resp-ps-width(440px, 345px);
+          font-size: 16px;
+          letter-spacing: 0.05em;
+          line-height: 1.875;
+        }
+        img{
+          @include resp-ps-width(440px, 345px);
+          @include resp-ps-height(240px, 150px);
+        }
+      }
+
+    }
+    .sectionSubtitle{
+      @include resp-ps-height(122px, 55px);
+      text-align: right;
+      font-family: "Noto Serif", serif;
+      @include resp-ps-font-size(90px, 40px);
+      letter-spacing: 0.05em;
+      opacity: 0.05;
+    }
+  }
+}
 #works{}
 #service{}
 #contact{}
