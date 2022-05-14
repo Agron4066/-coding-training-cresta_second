@@ -307,6 +307,15 @@ header #pc-nav ul li a {
   letter-spacing: 0.05em;
   font-size: 16px;
 }
+header #bg-pc-nav.bg-navy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+  height: 96px;
+  background-color: #282F35;
+}
 @media screen and (min-width: 1200px) {
   header ul .slider {
     margin: 0;
