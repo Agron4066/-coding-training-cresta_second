@@ -1,5 +1,6 @@
 /* You can add global styles, and also import other style files here */
 @import "mixins";
+@import "hamburger";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,700;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
 
@@ -33,20 +34,37 @@ header{
   position: relative;
   width: 100%;
   #pc-nav{
-    position: absolute;
-    z-index: 800;
+    position: fixed;
+    top: 19px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
     @include display-only-on-PC;
     display: flex;
     justify-content: space-between;
     width: 1200px;
     height: 36px;
     font-family: 'Noto Serif', serif;
+    font-style: italic;
+    font-weight: 700;
     color: white;
+    p{
+      line-height: 1.38;
+      letter-spacing: 0.05em;
+      font-size: 26px;
+    }
     ul{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
       li{
-        display: inline;
+        list-style: none;
         a{
           text-decoration: none;
+          line-height: 1.375;
+          letter-spacing: 0.05em;
+          font-size: 16px;
         }
       }
     }
@@ -69,6 +87,7 @@ header{
   .slider{@include display-only-on-PC;}
   .spFv{
     @include display-only-on-SP;
+    z-index: 0;
     display: flex;
     justify-content: center;
     width: 100vw;
@@ -76,6 +95,7 @@ header{
     overflow: hidden;
     img{
       @include display-only-on-SP;
+      z-index: 0;
       height: 599px;
     }
   }
@@ -84,6 +104,7 @@ header{
     @include resp-ps-top(409px, 202px);
     left: 50%;
     transform: translateX(-50%);
+    z-index: 10;
     display: block;
     @include resp-ps-width(1200px, 348px);
     p{

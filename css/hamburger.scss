@@ -1,0 +1,116 @@
+@import "mixins";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,700;1,700&display=swap');
+
+/*https://coco-factory.jp/ugokuweb/move01/5-1-14/ を参考にした。*/
+/*========= ナビゲーションのためのCSS ===============*/
+#sp-nav{
+  @include display-only-on-SP;
+  .sp-navWrapper{
+    position: absolute;
+    z-index: 9999;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 345px;
+    height: 36px;
+    .sp-navTitle{
+      font-family: 'Noto Serif', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.38;
+      letter-spacing: 0.05em;
+      color: white;
+    }
+    .sp-navTitle.panelactive{
+      display: none;
+    }
+  }
+
+  #hamburger-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position: fixed;
+    z-index: 996;
+    /*ナビのスタート位置と形状*/
+    top: 0;
+    right: -120%;
+    background-color: $base;
+    /*動き*/
+    transition: all 0.7s;
+
+  }
+  #hamburger-nav.panelactive{
+    /*.panelactiveクラスの前にスペースを入れない*/
+    /*アクティブクラスがついたら位置を0に*/
+    right: 0;
+    /*（アクティブ状態での）デザイン*/
+    @include flex-center-center;
+    @include no-margin-padding;
+    width: 100vw;
+    height: 100vh;
+    ul{
+      li{
+        margin-bottom: 30px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+        list-style: none;
+        font-family: 'Noto Serif', serif;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.375;
+        letter-spacing: 0.05em;
+        color: white;
+      }
+    }
+  }
+}
+
+
+/*========= ボタンのためのCSS ===============*/
+.hamburger-btn{
+  cursor: pointer;
+  width: 30px;
+  height: 23px;
+  span{
+    /*×に変化*/
+    display: inline-block;
+    transition: all .7s;
+    position: absolute;
+    right: 0px;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+  }
+  span:nth-of-type(1) {
+    top: 7px;
+  }
+  span:nth-of-type(2) {
+    top: 17px;
+  }
+  span:nth-of-type(3) {
+    top: 27px;
+  }
+}
+.hamburger-btn.active{
+  /*.activeクラスの前にスペースを入れない*/
+  span:nth-of-type(1) {
+    top: 7px;
+    right: 0px;
+    width: 30px;
+    transform: translateX(calc(15px * (1 - 1 / 1.414))) translateY(calc(15px / 1.414)) rotate(-45deg);
+  }
+  span:nth-of-type(2) {
+    opacity: 0;
+  }
+  span:nth-of-type(3){
+    top: 7px;
+    right: 0px;
+    width: 30px;
+    transform: translateX(calc(15px * (1 - 1 / 1.414))) translateY(calc(15px / 1.414)) rotate(45deg);
+  }
+}
