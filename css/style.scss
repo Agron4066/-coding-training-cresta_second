@@ -147,7 +147,6 @@ header{
       }
     }
   }
-
 }
 #concept{
   .sectionWrapper{
@@ -161,8 +160,7 @@ header{
       @include resp-ps-column-gap(33px, 31px);
       @include block-element-horizontal-center;
       @include resp-ps-margin-bottom(70px, 51px);
-      min-width: 345px;
-      max-width: 1000px;
+      @include resp-ps-width(1000px, 345px);
       h2{
         color: $base;
       }
@@ -244,7 +242,7 @@ header{
         color: white;
       }
       span{
-        @include resp-ps-width(200px, 90px);
+        @include resp-ps-width(200px, 100px);
         height: 5px;
         background-color: white;
       }
@@ -310,6 +308,73 @@ header{
     }
   }
 }
-#service{}
-#contact{}
+#service{
+  .sectionWrapper{
+    @include resp-ps-margin-top(100px, 109px);
+    @include resp-ps-margin-bottom(70px, 64px);
+    .sectionTitle{
+      display: flex;
+      align-items: center;
+      @include resp-ps-column-gap(29px, 30px);
+      @include block-element-horizontal-center;
+      @include resp-ps-margin-bottom(80px, 87px);
+      @include resp-ps-width(1000px, 345px);
+      h2{
+        color: $base;
+      }
+      span{
+        @include resp-ps-width(200px, 100px);
+        height: 5px;
+        background-color: $base;
+      }
+    }
+    article{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      @include resp-ps-margin-bottom(70px, 40px);
+      @media screen and (max-width: $sp-max){row-gap: 30px;}
+      width: 100%;
+      .card{
+        position: relative;
+        @include resp-ps-width(calc(100vw / 3), 100vw);
+        @include resp-ps-height(320px, 250px);
+
+        img{
+          @include resp-ps-width(calc(100vw / 3), 100vw);
+          @include resp-ps-height(320px, 250px);
+          object-fit: cover;
+          overflow: hidden;
+        }
+        p{
+          position: absolute;
+          z-index: 100;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          letter-spacing: 0.05em;
+          font-family: "Noto Serif", serif;
+          @include resp-ps-font-size(40px, 20px);
+          font-weight: 700;
+          font-style: italic;
+          color: white;
+        }
+
+      }
+    }
+    .sectionSubtitle{
+      @include block-element-horizontal-center;
+      @include resp-ps-width(1200px, 345px);
+      @include resp-ps-height(122px, 55px);
+      text-align: right;
+      font-family: "Noto Serif", serif;
+      @include resp-ps-font-size(90px, 40px);
+      letter-spacing: 0.05em;
+      opacity: 0.05;
+    }
+  }
+}
+#contact{
+
+}
 #footer{}
