@@ -227,7 +227,6 @@ h2 {
   font-family: "Noto Serif", serif;
   font-style: italic;
   font-weight: 700;
-  color: #282F35;
 }
 @media screen and (min-width: 1200px) {
   h2 {
@@ -307,7 +306,7 @@ header #pc-nav ul li a {
   letter-spacing: 0.05em;
   font-size: 16px;
 }
-header #bg-pc-nav.bg-navy {
+header #pc-nav-bg.bg-navy {
   position: fixed;
   top: 0;
   left: 0;
@@ -389,7 +388,7 @@ header .fvTitle p {
   padding: 0;
   letter-spacing: 0.05em;
   font-family: "Noto Serif JP", serif;
-  font-weight: bold;
+  font-weight: 700;
   color: white;
 }
 @media screen and (min-width: 1200px) {
@@ -479,6 +478,9 @@ header .fvTitle p {
   #concept .sectionWrapper .sectionTitle {
     margin-bottom: 51px;
   }
+}
+#concept .sectionWrapper .sectionTitle h2 {
+  color: #282F35;
 }
 #concept .sectionWrapper .sectionTitle span {
   height: 5px;
@@ -631,6 +633,211 @@ header .fvTitle p {
 }
 @media screen and (max-width: 1199px) {
   #concept .sectionWrapper .sectionSubtitle {
+    font-size: 40px;
+  }
+}
+
+#works {
+  position: relative;
+}
+#works .works-bg {
+  width: 100%;
+  height: 986px;
+  object-fit: cover;
+  overflow: hidden;
+}
+@media screen and (min-width: 1200px) {
+  #works .works-bg {
+    height: 986px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #works .works-bg {
+    height: 1533px;
+  }
+}
+#works .sectionWrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (min-width: 1200px) {
+  #works .sectionWrapper {
+    top: 104px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #works .sectionWrapper {
+    top: 100px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #works .sectionWrapper {
+    bottom: 70px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #works .sectionWrapper {
+    bottom: 40px;
+  }
+}
+#works .sectionWrapper .sectionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen and (min-width: 1200px) {
+  #works .sectionWrapper .sectionTitle {
+    column-gap: 48px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #works .sectionWrapper .sectionTitle {
+    column-gap: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #works .sectionWrapper .sectionTitle {
+    margin-bottom: 80px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #works .sectionWrapper .sectionTitle {
+    margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #works .sectionWrapper .sectionTitle {
+    width: 1200px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #works .sectionWrapper .sectionTitle {
+    width: 345px;
+  }
+}
+#works .sectionWrapper .sectionTitle h2 {
+  color: white;
+}
+#works .sectionWrapper .sectionTitle span {
+  height: 5px;
+  background-color: white;
+}
+@media screen and (min-width: 1200px) {
+  #works .sectionWrapper .sectionTitle span {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #works .sectionWrapper .sectionTitle span {
+    width: 90px;
+  }
+}
+#works .sectionWrapper article {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  #works .sectionWrapper article {
+    width: 1000px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #works .sectionWrapper article {
+    width: 320px;
+  }
+}
+#works .sectionWrapper article .cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 28px;
+}
+#works .sectionWrapper article .cards .card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 320px;
+}
+#works .sectionWrapper article .cards .card img {
+  display: flex;
+  width: 320px;
+  height: 200px;
+}
+#works .sectionWrapper article .cards .card p {
+  display: flex;
+  padding: 25px 20px;
+  width: 320px;
+  height: 134px;
+  background-color: white;
+  text-align: left;
+  letter-spacing: 0.05em;
+  line-height: 1.875;
+  font-family: "Noto Serif JP", serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #141414;
+}
+#works .sectionWrapper article button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 235px;
+  height: 59px;
+  border-radius: 30px;
+  background-color: #F7D43F;
+  letter-spacing: 0.05em;
+  font-family: "Noto Serif JP", serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #171717;
+}
+@media screen and (min-width: 1200px) {
+  #works .sectionWrapper article button {
+    margin-top: 80px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #works .sectionWrapper article button {
+    margin-top: 82px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #works .sectionWrapper article button {
+    margin-bottom: 70px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #works .sectionWrapper article button {
+    margin-bottom: 40px;
+  }
+}
+#works .sectionWrapper .sectionSubtitle {
+  letter-spacing: 0.05em;
+  font-family: "Noto Serif", serif;
+  font-weight: 700;
+  color: white;
+  opacity: 0.1;
+}
+@media screen and (min-width: 1200px) {
+  #works .sectionWrapper .sectionSubtitle {
+    height: 107px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #works .sectionWrapper .sectionSubtitle {
+    height: 61px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #works .sectionWrapper .sectionSubtitle {
+    font-size: 90px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #works .sectionWrapper .sectionSubtitle {
     font-size: 40px;
   }
 }
